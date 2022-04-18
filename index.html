@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        // function Dom()
+        //      {
+        //          return <h1>222</h1>
+        //       } 
+        //       ReactDOM.render(<Dom/>,document.getElementById('root'))
+            //   class Prrson{
+            //       constructor(name,age){
+            //           this.name=name
+            //           this.age=age
+            //       }
+            //       say(){
+            //           console.log(`我叫${this.name},我的年龄是${this.age}`)
+            //       }
+            //   }
+            //   class Person1 extends Prrson {
+            //       constructor(name,age,hobby){
+            //           super(name,age)
+            //           this.hobby=hobby
+            //      }
+            //      say(){
+            //           console.log(`我叫${this.name},我的年龄是${this.age},我的${this.hobby}`)
+            //       }
+            //       df(){
+            //           console.log(`2222`)
+            //       }
+            //   }
+            //   let p2=new Person1('AAA',12,'hobby')
+            //   console.log(p2.say())
+            //   console.log(p2.df())
+        //#region 
+            // class Mycomponent extends React.Component{
+            //     // constructor(props){
+            //     //     super(props)
+            //     //     // this.changer= this.changer.bind(this)
+            //     //     // state={ishot:false};
+                    
+            //     // }
+            //     state={ishot:false};
+            //       render(){
+            //           console.log(this,'@@@')
+            //           return <h1 onClick={this.changer}>{this.state.ishot ?"凉快":"炎热"}</h1>
+            //       }
+            //       changer=()=>{
+            //           const {ishot}=  this.state
+            //           this.setState({ishot:!ishot})
+            //           console.log(this)
+            //       }
+            // }
+            //#endregion
+            
+            // class Tome extends React.Component {
+            //     //     static propTypes={
+            //     //         age:propTypes.string,
+            //     // }
+            //         // static defaultProps={
+            //         //      name:'222222',
+            //         // }
+            //         state={aaa:111,b:!111,c:333}
+            //         render(){
+            //             const {name,age}=this.props
+            //             const {aaa,b}=this.state
+            //             return <h1>name{name}---{aaa}---d{b}</h1>
+            //         }
+                
+            // }
+            // Tome.propTypes={
+            //     name:protoTypes.string,
+            // }
+            // Tome.defaultProps={
+            //     name:'222222',
+            // }
+            //传递props
+            //refs 字符串和 函数写法
+            // class Tome extends React.Component{
+            //     state={isvolid:false}
+            //     myref=React.createRef()
+            //     render(){
+            //         return(
+            //             <div>
+            //                 <input type="text"></input>
+            //                 <input type="text"></input>
+            //                 <input ref={this.myref} type="text"></input>
+            //                 {/*<input ref={(c)=>{this.input1=c;console.log('@@',c)}}  type="text"></input>*/}
+            //                 <input onBlur={this.bulrc} type="text"></input>
+            //                 <h1> '天气' {this.state.isvolid ?'舒服': '炎热'}</h1>
+            //                 <button ref='ccc' onClick={this.buttonclic}>点我</button>
+            //            </div>
+            //         )
+            //     }
+            //     buttonclic=()=>{
+            //       const {input1}=this
+            //       const {isvolid}=this.state
+            //       this.setState({isvolid:!isvolid})
+            //     //console.log(input1.value,888)
+            //       console.log(this.myref.current.value,999)
+            //   }
+            //   bulrc=(e)=>{
+            //     console.log(e,899)
+            //   }
+            // }
+            //受控组件 v-moudle
+            // class Tome extends React.Component{
+            //     state={username:'',password:''}
+            //     render(){
+            //         return(
+            //             <div>
+            //                 <form action="">
+            //                     用户名: <input onChange={this.usernameChange} type="text" name="username" id=""></input>
+            //                      密码:<input onChange={this.passwordChange} type="password" name="password" id=""></input>
+            //                   <button onClick={this.Submit}>提交</button>
+            //             </form>
+                            
+            //            </div>
+            //         )
+            //     }
+            //     usernameChange=(e)=>{
+            //              this.setState({username:e.target.value})
+            //     }
+            //     passwordChange=(e)=>{
+            //              this.setState({password:e.target.value})
+            //     }
+            //     Submit=(e)=>{
+                        
+            //     }
+            // }
+
+            // class Tome extends React.Component{
+            //     state={username:'',password:''}
+            //     render(){
+            //         return(
+            //             <div>
+            //                 <form action="">
+            //                    {/* 用户名: <input onChange={this.uChange('username')} type="text" name="username" id=""></input>
+            //                      密码:<input onChange={this.uChange('password')} type="password" name="password" id=""></input>*/}
+            //                     用户名: <input onChange={(event)=>this.uChange('username',event)} type="text" name="username" id=""></input>
+            //                      密码:<input onChange={(event)=>this.uChange('password',event)} type="password" name="password" id=""></input>
+            //                      <button onClick={this.Submit}>提交</button>
+            //                      <button onClick={this.xiaoshi}></button>
+            //             </form>
+                            
+            //            </div>
+            //         )
+            //     }
+            //     // uChange=(dataType)=>{
+            //     //     console.log(dataType)
+            //     //         return (event)=>{
+            //     //             this.setState({[dataType]:event.target.value})
+            //     //         }
+            //     // }
+            //      uChange=(dataType,event)=>{
+            //         console.log(dataType,event)
+            //         this.setState({[dataType]:event.target.value})
+                       
+            //     }
+            //     xiaoshi=()=>{
+ 
+            //         }
+            //     Submit=(e)=>{
+                        
+            //     }
+            // }
+
+            //react 生命周期钩子函数
+            // class Tome extends React.Component{
+            //     constructor(props){
+            //         super(props)
+            //         this.state={cont:0}
+            //         console.log('constructor')
+            //     }
+            //     render(){
+            //         console.log('render')
+            //         return(
+            //             <div>
+            //                 <h2>当前求和为:{this.state.cont}</h2>
+            //                 <button onClick={this.add}>点我加1</button>
+            //             </div>
+            //         )
+            //     }
+            //     add=()=>{
+            //         const {cont}=this.state
+            //         this.setState({cont:cont+1})
+            //     }
+            //     //组件挂载前
+            //     componentWillMount(){
+            //         console.log('componentWiiMount')
+            //     }
+            //     //组件已经挂载
+            //     componentDidMount(){
+            //         console.log('componentDidMount')
+            //     }
+            //     //组件是否需要跟新?
+            //     shouldComponentUpdate(){
+            //         console.log('shouldComponentUpdate')
+            //         return true
+            //     }
+            //     //组件将要跟新
+            //     componentWillUpdate(){
+            //         console.log('componentWillUpdate')
+
+            //     }
+            //     //组件已经跟新
+            //     componentDidUpdate(){
+            //         console.log('componentDidUpdate')
+            //     }
+            //     //卸载组件
+            //     componentWillUnmount(){
+            //         console.log('componentWillUnmount')
+            //     }
+            // }
+            // class A extends React.Component{
+            //     render(){
+            //         return(
+            //             <div>
+            //                 <h1>A{this.props.carName}</h1>
+            //             </div>
+            //         )
+            //     }
+            //     //组件将要接收新的props参数
+            //     UNSAFE_componentWillReceiveProps(){
+            //          console.log('A--componentWillReceiveProps')
+            //     }
+            // }
+            // class Tome extends React.Component{
+            //     state={car:'奔驰'}
+            //     render(){
+            //         return(
+            //             <div>
+            //                 <A carName={this.state.car}></A>
+            //                 <h1>b</h1>
+            //                 <button onClick={this.carChange}>点我换车</button>
+            //             </div>
+
+            //         )
+            //     }
+            //     UNSAFE_componentWillMount(){
+            //       console.log('componentWillMount')
+            //   }
+            //   componentDidMount(){
+            //       console.log('componentDidMount')
+            //   }
+            //   shouldComponentUpdate(){
+            //       console.log('shouldComponentUpdate')
+            //       return true
+            //   }
+            //   UNSAFE_componentWillUpdate(){
+            //       console.log('componentWillUpdate')
+            //   }
+            //   componentDidUpdate(){
+            //       console.log('componentDidUpdate')
+            //   }
+            //   componentWillUnmount(){
+                  
+            //   }
+            //      carChange=()=>{
+            //         let {car}=this.state
+            //         this.setState({car:'奥拖'})
+            //     }
+            // }
+
+            class Tome extends React.Component{
+                state={a:111,b:222}
+                constructor(props){
+                    super(props)
+                    console.log('constructor')
+                }
+              static getDerivedStateFromProps(props){
+                    console.log('getDerivedStateFromProms',props)
+                     return {a:190}
+                }
+                render(){
+                    return(
+                        <div>
+                           <h1>{this.state.a}</h1> 
+                        </div>
+                    )
+                }
+            }
+            const obj={age:12,sex:111}
+            ReactDOM.render(<Tome {...obj}/>,document.getElementById('root'))
+
+        </script>
+</body>
+
+</html>

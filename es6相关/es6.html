@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let a = 1
+            // console.log(a)
+        const aaa = {
+            aaa: 222
+        }
+
+        function getadd(a) {
+            return a
+        }
+
+        function add(a = 10, b = getadd(10)) {
+            return a + b
+        }
+
+        console.log(add())
+
+
+        let objs = {
+            a: 1,
+            b: 2,
+            c: 3,
+        }
+
+        function obj(as, ...keys) {}
+        // console.log(obj(objs, 'a', 'b'))
+        console.log(...[111, 22, 333])
+    </script>
+</body>
+
+</html>
